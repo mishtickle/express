@@ -8,8 +8,8 @@ usersRouter.post("/create", usersController.usersCreatePost);
 usersRouter.get("/:id/update", usersController.usersUpdateGet);
 usersRouter.post("/:id/update", usersController.usersUpdatePost);
 usersRouter.post("/:id/delete", usersController.usersDeletePost);
-//usersRouter.get("/users/search", usersController.usersSearchGet);
-usersRouter.post("users/search", usersController.usersSearchPost);
+usersRouter.get("/search", usersController.usersSearchGet);
+usersRouter.post("/search", usersController.usersSearchPost);
 
 
 

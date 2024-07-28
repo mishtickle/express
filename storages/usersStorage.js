@@ -29,6 +29,7 @@ class UsersStorage {
     }
 
     getUserByEmail(email) {
+        console.log("searching by email");
         for (let i = 0; i < UsersStorage.length; i++){
             if (this.storage[i].email == email){
                 console.log("User found");
