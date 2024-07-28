@@ -83,7 +83,8 @@ exports.usersSearchGet = asyncHandler(async (req, res) => {
 })
 
 exports.usersSearchPost = asyncHandler(async (req, res) => {
-    const email = req.body;
+    const email = req.body.search;
+    console.log(email);
     usersStorage.getUserByEmail(email);
     res.redirect("/");
 })

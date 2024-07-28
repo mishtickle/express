@@ -29,13 +29,14 @@ class UsersStorage {
     }
 
     getUserByEmail(email) {
-        console.log("searching by email");
-        for (let i = 0; i < UsersStorage.length; i++){
-            if (this.storage[i].email == email){
-                console.log("User found");
-                return i
-            }
-        }
+        let userArray = Object.entries(this.storage);
+        Object.entries(this.storage).forEach(([key, value]) => {
+            console.log(`${key} ${value.email}`);
+            if (value.email == email){
+                console.log(`The id is: ${value.id}`);
+                return value.id;
+            } 
+          });
     }
   }
   // Rather than exporting the class, we can export an instance of the class by instantiating it.
