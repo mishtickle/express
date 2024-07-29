@@ -82,7 +82,7 @@ exports.usersSearchPost = asyncHandler(async (req, res) => {
     const id = usersStorage.getUserByEmail(email);
     console.log(`The id is ${id}`);
     const user = usersStorage.getUser(id);
-    console.log(`The user is ${user}`);
+    console.log(user);
     res.render("search", {title: "Search", user})
 })
 

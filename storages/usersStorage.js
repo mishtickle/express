@@ -29,11 +29,13 @@ class UsersStorage {
     }
 
     getUserByEmail(email) {
-        Object.entries(this.storage).forEach(([key, value]) => {
-            if (value.email == email){
-                return value.id;
+      let valueId = null;  
+      Object.entries(this.storage).forEach(([key, value]) => {
+            if (value.email == email){ 
+               valueId = value.id;
             } 
           });
+      return valueId;
     }
   }
   // Rather than exporting the class, we can export an instance of the class by instantiating it.
