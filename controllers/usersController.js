@@ -77,15 +77,18 @@ exports.usersDeletePost = asyncHandler(async (req, res) => {
     res.redirect("/");
   });
 
-exports.usersSearchGet = asyncHandler(async (req, res) => {
-    console.log("user search get activated");
-    res.redirect("/");
-})
-
 exports.usersSearchPost = asyncHandler(async (req, res) => {
     const email = req.body.search;
-    console.log(email);
-    usersStorage.getUserByEmail(email);
-    res.redirect("/");
+    const id = usersStorage.getUserByEmail(email);
+    console.log(`The id is ${id}`);
+    const user = usersStorage.getUser(id);
+    console.log(`The user is ${user}`);
+    res.render("search", {title: "Search", user})
 })
+
+exports.usersSearchGet = asyncHandler(async (req, res) => {
+    res.render("search", {title: "Search"})
+})
+
+
   

@@ -29,11 +29,8 @@ class UsersStorage {
     }
 
     getUserByEmail(email) {
-        let userArray = Object.entries(this.storage);
         Object.entries(this.storage).forEach(([key, value]) => {
-            console.log(`${key} ${value.email}`);
             if (value.email == email){
-                console.log(`The id is: ${value.id}`);
                 return value.id;
             } 
           });
